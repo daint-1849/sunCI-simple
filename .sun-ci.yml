@@ -23,7 +23,7 @@ jobs:
       - pull_request
 
 - name: show
-  state: show
+  stage: show
   image: node:12-alpine
   script:
     - echo $CI_BRANCH             # e.g: master
