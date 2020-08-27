@@ -39,6 +39,14 @@ jobs:
   - export APP_NAME="my app"
   - echo $APP_NAME  # my app
   - echo $ABC_ENV
+  - echo $CI_GIT_PROVIDER
+  - echo $CI_REPOSITORY
+  - echo $CI_BUILD_NUMBER
+  - echo $CI_BUILD_TRIGGER
+  - echo $CI_WEBHOOK_EVENT
+  - echo $CI_WEBHOOK_ACTION
+  - echo $CI_COMMIT_SHA
+  - echo $CI_COMMIT_MESSAGE
 
 - name: linting
   stage: lint
