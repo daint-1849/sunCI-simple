@@ -6,6 +6,10 @@ stages:
   - lint
   - test
 
+default:
+  environment:
+  - ABC_ENV: abc
+
 jobs:
 - name: install
   stage: install
@@ -32,6 +36,9 @@ jobs:
     - echo ${NAME:-default-name}  # default value
     - echo $PWD           # print current working directory
     - echo $NODE_VERSION  # NodeJS version
+    - export APP_NAME="my app"
+    - echo $APP_NAME  # my app
+    - echo $ABC_ENV
 
 - name: linting
   stage: lint
