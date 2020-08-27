@@ -2,6 +2,7 @@ workspace: true
 
 stages:
   - install
+  - show
   - lint
   - test
 
