@@ -1,5 +1,7 @@
-var abc = 12;
+let abc = 12;
 
 function x   () {
-  console.log('xxx')
+  console.log('xxx',abc)
 }
+
+x()
