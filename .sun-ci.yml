@@ -14,6 +14,10 @@ jobs:
   - yarn lint
   after_script:
   - echo "End linting"
+  cache:
+    - key: node_modules_$CI_BRANCH
+      paths:
+      - node_modules
   only:
     branches:
     - master
