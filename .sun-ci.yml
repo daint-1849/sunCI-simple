@@ -31,7 +31,7 @@ jobs:
   image: node:12-alpine
   script:
   - echo $CI_BRANCH             # e.g: master
-  - echo $YOUR_SECRET           # your secret value
+  - echo $MY_SECRET             # my secret value
   - echo ${CI_COMMIT_HASH:0:7}  # the commit sha truncated to 7 characters
   - echo ${NAME:-default-name}  # default value
   - echo $PWD           # print current working directory
