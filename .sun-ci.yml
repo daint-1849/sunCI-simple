@@ -1,0 +1,12 @@
+workspace: true
+
+stages:
+  - lint
+
+jobs:
+  lint:
+    state: lint
+    image: node:12-alpine
+    script:
+    - yarn install
+    - yarn lint
