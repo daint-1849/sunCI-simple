@@ -2,8 +2,13 @@ workspace: true
 
 stages:
   - install
+  - show
   - lint
   - test
+
+default:
+  environment:
+    ABC_ENV: abc
 
 jobs:
 - name: install
@@ -15,6 +20,33 @@ jobs:
   - key: node_modules_$CI_BRANCH
     paths:
     - node_modules
+    only:
+      branches:
+      - master
+      events:
+      - pull_request
+
+- name: show
+  stage: show
+  image: node:12-alpine
+  script:
+  - echo $CI_BRANCH             # e.g: master
+  - echo $MY_SECRET             # my secret value
+  - echo ${CI_COMMIT_HASH:0:7}  # the commit sha truncated to 7 characters
+  - echo ${NAME:-default-name}  # default value
+  - echo $PWD           # print current working directory
+  - echo $NODE_VERSION  # NodeJS version
+  - export APP_NAME="my app"
+  - echo $APP_NAME  # my app
+  - echo $ABC_ENV
+  - echo $CI_GIT_PROVIDER
+  - echo $CI_REPOSITORY
+  - echo $CI_BUILD_NUMBER
+  - echo $CI_BUILD_TRIGGER
+  - echo $CI_WEBHOOK_EVENT
+  - echo $CI_WEBHOOK_ACTION
+  - echo $CI_COMMIT_SHA
+  - echo $CI_COMMIT_MESSAGE
 
 - name: linting
   stage: lint
@@ -36,3 +68,9 @@ jobs:
   image: node:12-alpine
   script:
   - yarn test
+  only:
+    branches:
+    - master
+    events:
+    - pull_request
+
