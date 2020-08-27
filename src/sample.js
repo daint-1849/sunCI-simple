@@ -1,7 +1,7 @@
 let abc = 12;
 
 function x   () {
-  console.log('aaxxx',abc)
+  console.log('xxx',abc)
 }
 
 x()
