@@ -4,9 +4,18 @@ stages:
   - lint
 
 jobs:
-  lint:
-    stage: lint
-    image: node:12-alpine
-    script:
-    - yarn install
-    - yarn lint
+- name: linting
+  stage: lint
+  image: node:12-alpine
+  before_script:
+  - echo "Start linting"
+  script:
+  - yarn
+  - yarn lint
+  after_script:
+  - echo "End linting"
+  only:
+    branches:
+    - master
+    events:
+    - pull_request
