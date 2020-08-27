@@ -1,7 +1,7 @@
 const abc = 12;
 
 function x   () {
-  console.log('xxx',abc)
+  console.log('xaaaxx',abc)
 }
 
 x()
