@@ -12,6 +12,6 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest --silent"
   }
 }
