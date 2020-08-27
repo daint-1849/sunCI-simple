@@ -1,33 +1,38 @@
 workspace: true
 
 stages:
+  - install
   - lint
   - test
 
 jobs:
+- name: install
+  stage: install
+  image: node:12-alpine
+  script:
+  - yarn
+  cache:
+  - key: node_modules_$CI_BRANCH
+    paths:
+    - node_modules
+
 - name: linting
   stage: lint
   image: node:12-alpine
   before_script:
   - echo "Start linting"
   script:
-  - yarn
   - yarn lint
   after_script:
   - echo "End linting"
-  cache:
-    - key: node_modules_$CI_BRANCH
-      paths:
-      - node_modules
   only:
     branches:
     - master
     events:
     - pull_request
 
-- name: test
+- name: unit test
   stage: test
   image: node:12-alpine
   script:
   - yarn test
-  
