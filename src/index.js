@@ -4,4 +4,4 @@ function x   () {
   console.log('xxx',abc)
 }
 
-x()
+module.exports = { x }

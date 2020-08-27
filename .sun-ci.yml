@@ -2,6 +2,7 @@ workspace: true
 
 stages:
   - lint
+  - test
 
 jobs:
 - name: linting
@@ -23,3 +24,10 @@ jobs:
     - master
     events:
     - pull_request
+
+- name: test
+  stage: test
+  image: node:12-alpine
+  script:
+  - yarn test
+  
