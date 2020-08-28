@@ -9,6 +9,7 @@ stages:
 default:
   environment:
     ABC_ENV: abc
+    TEST_ENV: "dai test"
 
 jobs:
 - name: install
