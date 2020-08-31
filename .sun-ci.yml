@@ -21,11 +21,11 @@ jobs:
   - key: node_modules_$CI_BRANCH
     paths:
     - node_modules
-    only:
-      branches:
-      - master
-      events:
-      - pull_request
+  only:
+    branches:
+    - master
+    events:
+    - pull_request
 
 - name: show
   stage: show
