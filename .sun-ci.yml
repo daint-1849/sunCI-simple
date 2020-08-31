@@ -15,7 +15,7 @@ default:
 jobs:
 - name: install
   stage: install
-  image: node:${NODE_IMAGE_VERSION}
+  image: node:$NODE_IMAGE_VERSION
   script:
   - yarn
   cache:
