@@ -1,10 +1,10 @@
 workspace: true
 
 stages:
-  - install
-  - show
-  - lint
-  - test
+- install
+- show
+- lint
+- test
 
 default:
   environment:
