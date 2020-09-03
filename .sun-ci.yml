@@ -31,6 +31,8 @@ jobs:
   stage: show
   image: node:12-alpine
   script:
+  - node -v
+  - yarn -v
   - echo $CI_BRANCH             # e.g: master
   - echo $MY_SECRET             # my secret value
   - echo ${CI_COMMIT_HASH:0:7}  # the commit sha truncated to 7 characters
