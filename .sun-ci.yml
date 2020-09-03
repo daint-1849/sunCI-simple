@@ -15,7 +15,7 @@ default:
 jobs:
 - name: install
   stage: install
-  image: node:12-alpine
+  image: "node:$NODE_IMAGE_VERSION"
   script:
   - yarn
   cache:
@@ -30,7 +30,7 @@ jobs:
 
 - name: show
   stage: show
-  image: node:12-alpine
+  image: "node:$NODE_IMAGE_VERSION"
   script:
   - echo $CI_BRANCH             # e.g: master
   - echo $MY_SECRET             # my secret value
@@ -52,7 +52,7 @@ jobs:
 
 - name: linting
   stage: lint
-  image: node:12-alpine
+  image: "node:$NODE_IMAGE_VERSION"
   before_script:
   - echo "Start linting"
   script:
@@ -67,7 +67,7 @@ jobs:
 
 - name: unit test
   stage: test
-  image: node:12-alpine
+  image: "node:$NODE_IMAGE_VERSION"
   script:
   - yarn test
   only:
