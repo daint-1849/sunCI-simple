@@ -55,7 +55,7 @@ jobs:
     branches:
     - master
     events:
-    - push
+    - pull_request
 
 - name: linting
   stage: lint
