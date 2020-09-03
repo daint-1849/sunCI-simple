@@ -30,6 +30,9 @@ jobs:
 - name: show
   stage: show
   image: node:12-alpine
+  before_script:
+  - node -v
+  - yarn -v
   script:
   - echo $CI_BRANCH             # e.g: master
   - echo $MY_SECRET             # my secret value
