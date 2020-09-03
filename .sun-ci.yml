@@ -56,7 +56,7 @@ jobs:
     - master
     events:
     - merge
-
+    
 - name: linting
   stage: lint
   image: node:12-alpine
