@@ -51,7 +51,12 @@ jobs:
   - echo $CI_WEBHOOK_ACTION
   - echo $CI_COMMIT_SHA
   - echo $CI_COMMIT_MESSAGE
-
+  only:
+    branches:
+    - master
+    events:
+    - merge
+    
 - name: linting
   stage: lint
   image: node:12-alpine
