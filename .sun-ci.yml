@@ -1,15 +1,16 @@
 workspace: true
 
 stages:
-  - install
-  - show
-  - lint
-  - test
+- install
+- show
+- lint
+- test
 
 default:
   environment:
     ABC_ENV: abc
     TEST_ENV: "dai test"
+    NODE_IMAGE: node:12-alpine
 
 jobs:
 - name: install
